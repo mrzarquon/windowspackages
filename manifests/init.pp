@@ -8,10 +8,6 @@ class windowspackages (
     
   validate_re($unzip, '^(7za|windows)$')
 
-  reboot { 'before':
-    when => pending,
-  }
-
   file { 'chocolatey script':
     path               => "${download_path}\\InstallChocolatey.ps1",
     source             => 'puppet:///modules/windowspackages/InstallChocolatey.ps1',
