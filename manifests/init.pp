@@ -5,7 +5,8 @@ class windowspackages (
 ) {
 
   include windowspackages::packages
-    
+  include windowspackages::absent
+
   validate_re($unzip, '^(7za|windows)$')
 
   file { 'chocolatey script':
